@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Random Files
+.DS_Store
+todo.txt
+bull_test.jpg
+
+
 # Distribution / packaging
 .Python
 build/
