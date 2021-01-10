@@ -25,7 +25,9 @@ I have also uploaded the model parameters for ResNet18. There are two .pth files
 Please refer to the adv_report.pdf file for explanation of each algorithm, as well as performance on MNIST and CIFAR10 datasets.
 
 ### FGSM
-![FGSM](images/fgsm.jpg)
+<img src="images/fgsm.png"
+     alt="FGSM results"
+     style="text-align:center" />
 ### FLGM
 
 ### FSGM
