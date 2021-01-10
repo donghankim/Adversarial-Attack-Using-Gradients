@@ -19,8 +19,6 @@ def main():
         runner.test()
     elif config.generate:
         runner.generate()
-    
-
 
 
 
