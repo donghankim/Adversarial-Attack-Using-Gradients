@@ -10,7 +10,7 @@ def get_args():
     argp.add_argument('--generate', action = 'store_true')
 
     # DATA
-    argp.add_argument('--dataset', type = str, choices = ['cifar10', 'imagenet'], default = 'cifar10')
+    argp.add_argument('--dataset', type = str, choices = ['cifar10', 'imagenet'], default = 'imagenet')
     argp.add_argument('--save_adv', action = 'store_true')
 
     # PATH
@@ -22,8 +22,8 @@ def get_args():
     # PARAMETERS
     argp.add_argument('--epochs', type = int, default = 11)
     argp.add_argument('--lr', type = float, default = 0.001)
-    argp.add_argument('--batch_size', type = int, default = 10)
-    argp.add_argument('--test_size', type = int, default = 1000) # this is only for imagenet.
+    argp.add_argument('--batch_size', type = int, default = 100)
+    argp.add_argument('--test_size', type = int, default = 10000) # this is only for imagenet.
 
     # ADVERSARIAL ATTACK
     argp.add_argument('--attack', type = str, choices = ['fgsm', 'flgm', 'fsgm', 'flogm'], default = 'fgsm')

@@ -4,7 +4,6 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 import os, pdb
-from PIL import Image
 
 
 # class labels are from the imagenet database.
@@ -73,20 +72,10 @@ class Imagenet(DataSet):
     def create_dataset(self):
         dataset = datasets.ImageFolder(self.imagenet_dir, transform = self.transforms)
         self.classes = dataset.classes
-        self.test = torch.utils.data.Subset(dataset, range(self.test_size))
-        self.train = torch.utils.data.Subset(dataset, range(self.test_size, len(dataset)))
+        self.train, self.test = torch.utils.data.random_split(dataset, [len(dataset) - self.test_size, self.test_size])
 
         self.train_loader = DataLoader(self.train, batch_size=self.batch_size, shuffle=True)
         self.test_loader = DataLoader(self.test, batch_size=self.batch_size, shuffle=True)
-
-# Delete before push
-class Single_image(DataSet):
-    def __init__(self, config):
-        super().__init__(config)
-        img = Image.open('bull_test.jpg')
-        self.img = self.transforms(img)
-
-
 
 
 
